@@ -10,10 +10,12 @@ setInterval(async () => {
   const newArticles = await fetchService.fetchAndCompare();
   if (newArticles.length > 0) {
     console.log(`Found ${newArticles.length} new articles.`);
-  } else console.log(`No new articles found`);
+  }
 }, 5000);
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+module.exports = app;
