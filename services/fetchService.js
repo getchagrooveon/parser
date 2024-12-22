@@ -11,7 +11,7 @@ if (!fs.existsSync(articlesFilePath)) {
 
 const fetchAndCompare = async () => {
   try {
-    const response = await axios.get(process.env.NEWS_API_URL);
+    const response = await axios.get(process.env.VERCEL_NEWS_API_URL);
 
     const articles = response?.data?.data?.catalogs[0]?.articles;
 

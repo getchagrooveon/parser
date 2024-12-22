@@ -3,7 +3,7 @@ const express = require('express');
 const fetchService = require('./services/fetchService');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.VERCEL_PORT || 3000;
 
 // Fetch and compare articles every 5 seconds
 setInterval(async () => {

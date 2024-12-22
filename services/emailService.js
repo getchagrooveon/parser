@@ -5,8 +5,8 @@ const sendEmail = async newArticles => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.VERCEL_EMAIL_USER,
+        pass: process.env.VERCEL_EMAIL_PASS,
       },
     });
 
@@ -20,8 +20,8 @@ const sendEmail = async newArticles => {
       .join('');
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.NOTIFY_EMAIL,
+      from: process.env.VERCEL_EMAIL_USER,
+      to: process.env.VERCEL_NOTIFY_EMAIL,
       subject: 'New Binance articles available',
       html: `<p>The following new articles were found:</p><ul>${articleList}</ul>`,
     };
