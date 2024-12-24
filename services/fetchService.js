@@ -41,7 +41,7 @@ const fetchAndCompare = async () => {
       fs.writeFileSync(articlesFilePath, JSON.stringify(updatedArticles, null, 2));
 
       await emailService.sendEmail(newArticles);
-    } else await emailService.sendEmail(['nothing new']);
+    }
 
     return newArticles;
   } catch (err) {
